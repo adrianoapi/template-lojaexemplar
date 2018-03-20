@@ -253,5 +253,15 @@
       <script src="assets/js/util.js"></script>
       <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
       <script src="assets/js/main.js"></script>
+	  
+	  <script>
+		$(window).resize(function () {
+			var viewportWidth = $(window).width();
+			if (viewportWidth < 600) {
+				$('.bg-video').remove();
+				$('#top'	 ).css('background-image', 'url(assets/css/images/bg.png)');
+			}
+		});
+	  </script>
    </body>
 </html>
