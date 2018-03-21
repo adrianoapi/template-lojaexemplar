@@ -65,24 +65,7 @@
       <!-- Main -->
       <div id="main">
          <!-- Intro -->
-         <section id="top" class="" style="background-image: url("images/overlay.png");">
-			<div class="bg-video">
-				<video autoplay loop src="assets/video/563399566.ogv"></video>
-			</div>
-            <div class="container">
-               <header>
-                  <h2 class="alt">Hi! I'm <strong>Prologue</strong>, a <a href="http://lojaexemplar.com.br/license">free</a> responsive<br />
-                     site template designed by <a href="http://lojaexemplar.com.br">DEV</a>.
-                  </h2>
-                  <p>Ligula scelerisque justo sem accumsan diam quis<br />
-                     vitae natoque dictum sollicitudin elementum.
-                  </p>
-               </header>
-               <footer>
-                  <a href="#modulos" class="button scrolly"><span class="icon fa-android"> &nbsp;&nbsp; <span class="icon fa-apple"> &nbsp;&nbsp; Mobile Developer</a>
-                  <a href="#modulos" class="button scrolly"><span class="icon fa-cloud"> &nbsp;&nbsp; Web Developer</a>
-               </footer>
-            </div>
+         <section id="top" class="">
          </section>
          <!-- modulos -->
          <section id="modulos" class="two">
@@ -255,11 +238,33 @@
       <script src="assets/js/main.js"></script>
 	  
 	  <script>
+	  var str_video = '<div class="bg-video">' +
+					  '	<video autoplay loop src="assets/video/563399566.ogv"></video>' +
+					  '</div>';
+	  var str_texto = '<div class="container">' +
+					  '   <header>' +
+					  '	  <h2 class="alt">Hissss <strong>Prologue</strong>, a <a href="http://lojaexemplar.com.br/license">free</a> responsive<br />' +
+					  '		 site template designed by <a href="http://lojaexemplar.com.br">DEV</a>.' +
+					  '	  </h2>' +
+					  '	  <p>Ligula scelerisque justo sem accumsan diam quis<br />' +
+					  '		 vitae natoque dictum sollicitudin elementum.' +
+					  '	  </p>' +
+					  '   </header>' +
+					  '   <footer>' +
+					  '	  <a href="#modulos" class="button scrolly"><span class="icon fa-android"> &nbsp;&nbsp; <span class="icon fa-apple"> &nbsp;&nbsp; Mobile Developer</a>' +
+					  '	  <a href="#modulos" class="button scrolly"><span class="icon fa-cloud"> &nbsp;&nbsp; Web Developer</a>' +
+					  '   </footer>' +
+					  '</div>';
+					  
 		$(window).resize(function () {
 			var viewportWidth = $(window).width();
 			if (viewportWidth < 600) {
 				$('.bg-video').remove();
 				$('#top'	 ).css('background-image', 'url(assets/css/images/bg.png)');
+				$('#top'	 ).html(str_texto);
+			}else{
+				$('#top'	 ).css('background-image', 'url(assets/css/images/overlay.png)');
+				$('#top'	 ).html(str_video + str_texto);
 			}
 		});
 	  </script>
