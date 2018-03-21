@@ -253,7 +253,8 @@
 		
 	  var video     = checkIE() == true ? '<video autoplay loop src="assets/video/563399566.mp4" type="video/mp4"></video>' : '<video autoplay loop src="assets/video/563399566.ogv"></video>';
 	  var str_video = '<div class="bg-video">' + video +'</div>';
-	  var str_texto = '<div class="container">' +
+	  var str_texto = '' +
+	                  '<div class="container">' +
 					  '   <header>' +
 					  '	  <h2 class="alt">Hissss <strong>Prologue</strong>, a <a href="http://lojaexemplar.com.br/license">free</a> responsive<br />' +
 					  '		 site template designed by <a href="http://lojaexemplar.com.br">DEV</a>.' +
@@ -274,7 +275,8 @@
 				$('.bg-video').remove();
 				$('#top'	 ).css('background-image', 'url(assets/css/images/bg.png)');
 				$('#top'	 ).html(str_texto);
-			}else{
+				$('.button  ').css('margin', '5px');
+			}else {
 				$('#top'	 ).css('background-image', 'url(assets/css/images/overlay.png)');
 				$('#top'	 ).html(str_video + str_texto);
 			}
