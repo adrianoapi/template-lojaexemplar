@@ -66,6 +66,7 @@
       <div id="main">
          <!-- Intro -->
          <section id="top" class="">
+			<h1>Carregando...</h1>
          </section>
          <!-- modulos -->
          <section id="modulos" class="two">
@@ -238,9 +239,20 @@
       <script src="assets/js/main.js"></script>
 	  
 	  <script>
-	  var str_video = '<div class="bg-video">' +
-					  '	<video autoplay loop src="assets/video/563399566.ogv"></video>' +
-					  '</div>';
+		function checkIE() {
+
+			var ua = window.navigator.userAgent;
+			var msie = ua.indexOf("MSIE ");
+
+			if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+	  var video     = checkIE() == true ? '<video autoplay loop src="assets/video/563399566.mp4" type="video/mp4"></video>' : '<video autoplay loop src="assets/video/563399566.ogv"></video>';
+	  var str_video = '<div class="bg-video">' + video +'</div>';
 	  var str_texto = '<div class="container">' +
 					  '   <header>' +
 					  '	  <h2 class="alt">Hissss <strong>Prologue</strong>, a <a href="http://lojaexemplar.com.br/license">free</a> responsive<br />' +
