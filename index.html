@@ -256,16 +256,15 @@
 	  var str_texto = '' +
 					  '<div class="container">' +
 					  '   <header>' +
-					  '	  <h2 class="alt">Hissss <strong>Prologue</strong>, a <a href="http://lojaexemplar.com.br/license">free</a> responsive<br />' +
-					  '		 site template designed by <a href="http://lojaexemplar.com.br">DEV</a>.' +
+					  '	  <h2>Terceirize seus serviços conosco!' +
 					  '	  </h2>' +
-					  '	  <p>Ligula scelerisque justo sem accumsan diam quis<br />' +
-					  '		 vitae natoque dictum sollicitudin elementum.' +
+					  '	  <p>Descrição e profissionalismo.<br />' +
+					  '		 Total confidencialidade no desenvolvimento dos projetos de sua empresa.' +
 					  '	  </p>' +
 					  '   </header>' +
 					  '   <footer>' +
-					  '	  <a href="#modulos" class="button scrolly"><span class="icon fa-android"> &nbsp;&nbsp; <span class="icon fa-apple"> &nbsp;&nbsp; Mobile Developer</a>' +
-					  '	  <a href="#modulos" class="button scrolly"><span class="icon fa-cloud"> &nbsp;&nbsp; Web Developer</a>' +
+					  '	  <a href="#modulos" class="button scrolly"><span class="icon fa-android"> &nbsp;&nbsp; <span class="icon fa-apple"> &nbsp;&nbsp; Mobile</a>' +
+					  '	  <a href="#modulos" class="button scrolly"><span class="icon fa-cloud"> &nbsp;&nbsp; Web</a>' +
 					  '   </footer>' +
 					  '</div>';
 					  
@@ -275,10 +274,15 @@
 				$('.bg-video').remove();
 				$('#top'	 ).css('background-image', 'url(assets/css/images/bg.png)');
 				$('#top'	 ).html(str_texto);
-				$('.button  ').css('margin', '5px');
+				$('.button'  ).css('margin', '5px');
 			}else {
-				$('#top'	 ).css('background-image', 'url(assets/css/images/overlay.png)');
-				$('#top'	 ).html(str_video + str_texto);
+				$('#top'   ).css('background-image', 'url(assets/css/images/overlay.png)');
+				$('#top'   ).html(str_video + str_texto);
+				$('#top h2').css('color', '#fff');
+				$('#top h2').css('background-color', 'black');
+				$('#top p' ).css('color', '#fff');
+				$('#top p' ).css('background-color', '#ff6600');
+				$('#top footer').css('margin-top', '250px');
 			}
 		});
 	  </script>
