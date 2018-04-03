@@ -230,50 +230,51 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
       <script src="assets/js/main.js"></script>
 	  
 	  <script>
-		function checkIE() {
+            function checkIE() {
 
-			var ua = window.navigator.userAgent;
-			var msie = ua.indexOf("MSIE ");
+                var ua = window.navigator.userAgent;
+                var msie = ua.indexOf("MSIE ");
 
-			if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-				return true;
-			} else {
-				return false;
-			}
-		}
+                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+                        return true;
+                } else {
+                        return false;
+                }
+            }
 		
-	  var video     = checkIE() == true ? '<video autoplay loop src="assets/video/563399566.mp4" type="video/mp4"></video>' : '<video autoplay loop src="assets/video/563399566.ogv"></video>';
-	  var str_video = '<div class="bg-video">' + video +'</div>';
-	  var str_texto = '<div class="container">' +
-                          '   <header>' +
-                          '	  <h2>Terceirize seus serviços conosco!</h2>' +
-                          '	  <p>Descrição e profissionalismo.<br />' +
-                          '		 Total confidencialidade no desenvolvimento/manutenção dos projetos de sua empresa.' +
-                          '	  </p>' +
-                          '   </header>' +
-                          '   <footer>' +
-                          '	  <a href="#experiencias" class="button"><span class="icon fa-android"> &nbsp;&nbsp; <span class="icon fa-apple"> &nbsp;&nbsp; Mobile</a>' +
-                          '	  <a href="#experiencias" class="button"><span class="icon fa-cloud"> &nbsp;&nbsp; Web</a>' +
-                          '   </footer>' +
-                          '</div>';
+            var file_name	= '563399566';	
+            var video     = checkIE() == true ? '<video autoplay loop src="assets/video/' + file_name + '.mp4" type="video/mp4"></video>' : '<video autoplay loop src="assets/video/' + file_name + '.ogv"></video>';
+            var str_video = '<div class="bg-video">' + video +'</div>';
+            var str_texto = '<div class="container">' +
+                            '   <header>' +
+                            '	  <h2>Terceirize seus serviços conosco!</h2>' +
+                            '	  <p>Descrição e profissionalismo.<br />' +
+                            '		 Total confidencialidade no desenvolvimento/manutenção dos projetos de sua empresa.' +
+                            '	  </p>' +
+                            '   </header>' +
+                            '   <footer>' +
+                            '	  <a href="#experiencias" class="button"><span class="icon fa-android"> &nbsp;&nbsp; <span class="icon fa-apple"> &nbsp;&nbsp; Mobile</a>' +
+                            '	  <a href="#experiencias" class="button"><span class="icon fa-cloud"> &nbsp;&nbsp; Web</a>' +
+                            '   </footer>' +
+                            '</div>';
 					  
-		$(window).resize(function () {
-			var viewportWidth = $(window).width();
-			if (viewportWidth < 600) {
-				$('.bg-video').remove();
-				$('#top'     ).css('background-image', 'url(assets/css/images/bg.png)');
-				$('#top'     ).html(str_texto);
-				$('.button'  ).css('margin', '5px');
-			}else {
-				$('#top'   ).css('background-image', 'url(assets/css/images/overlay.png)');
-				$('#top'   ).html(str_video + str_texto);
-				$('#top h2').css('color', '#fff');
-				$('#top h2').css('background-color', 'black');
-				$('#top p' ).css('color', '#fff');
-				$('#top p' ).css('background-color', '#ff6600');
-				$('#top footer').css('margin-top', '250px');
-			}
-		});
+            $(window).resize(function () {
+                var viewportWidth = $(window).width();
+                if (viewportWidth < 600) {
+                    $('.bg-video').remove();
+                    $('#top'     ).css('background-image', 'url(assets/css/images/bg.png)');
+                    $('#top'     ).html(str_texto);
+                    $('.button'  ).css('margin', '5px');
+                }else {
+                    $('#top'   ).css('background-image', 'url(assets/css/images/overlay.png)');
+                    $('#top'   ).html(str_video + str_texto);
+                    $('#top h2').css('color', '#fff');
+                    $('#top h2').css('background-color', 'black');
+                    $('#top p' ).css('color', '#fff');
+                    $('#top p' ).css('background-color', '#ff6600');
+                    $('#top footer').css('margin-top', '250px');
+                }
+            });
 	  </script>
    </body>
 </html>
