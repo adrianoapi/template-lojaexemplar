@@ -192,22 +192,19 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                <div class="row">
                   <div class="6u 12u$(mobile)">
                         <div class="clear">
-                           <div class="alert">
+                           <div class="alert" style="display:none;">
                             <span class="closebtn">&times;</span>  
                             <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
                           </div>
-
-                          <div class="alert success">
+                          <div class="alert success" style="display:none;">
                             <span class="closebtn">&times;</span>  
                             <strong>Success!</strong> Indicates a successful or positive action.
                           </div>
-
-                          <div class="alert info">
+                          <div class="alert info" style="display:none;">
                             <span class="closebtn">&times;</span>  
                             <strong>Info!</strong> Indicates a neutral informative change or action.
                           </div>
-
-                          <div class="alert warning">
+                          <div class="alert warning" style="display:none;">
                             <span class="closebtn">&times;</span>  
                             <strong>Warning!</strong> Indicates a warning that might need attention.
                           </div>
@@ -263,7 +260,7 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                 }
             }
 		
-            var file_name	= '563399566';	
+            var file_name = '563399566';	
             var video     = checkIE() == true ? '<video autoplay loop src="assets/video/' + file_name + '.mp4" type="video/mp4"></video>' : '<video autoplay loop src="assets/video/' + file_name + '.ogv"></video>';
             var str_video = '<div class="bg-video">' + video +'</div>';
             var str_texto = '<div class="container">' +
