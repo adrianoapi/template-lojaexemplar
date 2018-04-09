@@ -105,7 +105,7 @@
                   </div>
                   <div class="4u$ 12u$(mobile)">
                      <article class="item">
-                        <a href="#" class="image fit"><img src="images/themes/g2.jpg" alt="" /></a>
+                        <a href="http://vitrine.lojaexemplar.com.br" target="_blank" class="image fit"><img src="images/themes/g2.jpg" alt="" /></a>
                         <header>
                            <h3>Vitrine virtual</h3>
                         </header>
@@ -191,6 +191,27 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                </header>
                <div class="row">
                   <div class="6u 12u$(mobile)">
+                        <div class="clear">
+                           <div class="alert">
+                            <span class="closebtn">&times;</span>  
+                            <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+                          </div>
+
+                          <div class="alert success">
+                            <span class="closebtn">&times;</span>  
+                            <strong>Success!</strong> Indicates a successful or positive action.
+                          </div>
+
+                          <div class="alert info">
+                            <span class="closebtn">&times;</span>  
+                            <strong>Info!</strong> Indicates a neutral informative change or action.
+                          </div>
+
+                          <div class="alert warning">
+                            <span class="closebtn">&times;</span>  
+                            <strong>Warning!</strong> Indicates a warning that might need attention.
+                          </div>
+                        </div>
                         <form method="post" action="#">
                            <div class="row">
                               <div class="12u$ 12u$(mobile)"><input type="text" name="name" placeholder="nome" /></div>
@@ -206,7 +227,7 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                         </form>
                   </div>
                   <div class="6u 12u$(mobile)">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.4973524938196!2d-46.681468584937186!3d-23.550574567079405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce578e3fdf3917%3A0xbd6356e8bc5cd8f3!2sRua+Oscar+Freire%2C+2617+-+Pinheiros%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1522845027483" width="500" height="425" frameborder="0" style="border:1px solid gray;" allowfullscreen></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.4973524938196!2d-46.681468584937186!3d-23.550574567079405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce578e3fdf3917%3A0xbd6356e8bc5cd8f3!2sRua+Oscar+Freire%2C+2617+-+Pinheiros%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1522845027483" width="500" height="425" frameborder="0" style="border:1px solid gray;" allowfullscreen></iframe>
                   </div>
                </div>
             </div>
@@ -275,6 +296,27 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                     $('#top footer').css('margin-top', '250px');
                 }
             });
+            
+            //Message
+            // Get all elements with class="closebtn"
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+// Loop through all close buttons
+for (i = 0; i < close.length; i++) {
+    // When someone clicks on a close button
+    close[i].onclick = function(){
+
+        // Get the parent of <span class="closebtn"> (<div class="alert">)
+        var div = this.parentElement;
+
+        // Set the opacity of div to 0 (transparent)
+        div.style.opacity = "0";
+
+        // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+    }
+}
 	  </script>
    </body>
 </html>
