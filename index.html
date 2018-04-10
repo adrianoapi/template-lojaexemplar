@@ -245,21 +245,12 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
       <script src="assets/js/skel.min.js"></script>
       <script src="assets/js/util.js"></script>
       <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="assets/js/resp.js"></script>
+      <script src="assets/js/valida.js"></script>
       <script src="assets/js/main.js"></script>
 	  
 	  <script>
-            function checkIE() {
-
-                var ua = window.navigator.userAgent;
-                var msie = ua.indexOf("MSIE ");
-
-                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-                        return true;
-                } else {
-                        return false;
-                }
-            }
-		
+              
             var file_name = '563399566';	
             var video     = checkIE() == true ? '<video autoplay loop src="assets/video/' + file_name + '.mp4" type="video/mp4"></video>' : '<video autoplay loop src="assets/video/' + file_name + '.ogv"></video>';
             var str_video = '<div class="bg-video">' + video +'</div>';
@@ -275,7 +266,7 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                             '	  <a href="#experiencias" class="button"><span class="icon fa-cloud"> &nbsp;&nbsp; Web</a>' +
                             '   </footer>' +
                             '</div>';
-					  
+
             $(window).resize(function () {
                 var viewportWidth = $(window).width();
                 if (viewportWidth < 600) {
@@ -296,24 +287,24 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
             
             //Message
             // Get all elements with class="closebtn"
-var close = document.getElementsByClassName("closebtn");
-var i;
+            var close = document.getElementsByClassName("closebtn");
+            var i;
 
-// Loop through all close buttons
-for (i = 0; i < close.length; i++) {
-    // When someone clicks on a close button
-    close[i].onclick = function(){
+            // Loop through all close buttons
+            for (i = 0; i < close.length; i++) {
+                // When someone clicks on a close button
+                close[i].onclick = function(){
 
-        // Get the parent of <span class="closebtn"> (<div class="alert">)
-        var div = this.parentElement;
+                    // Get the parent of <span class="closebtn"> (<div class="alert">)
+                    var div = this.parentElement;
 
-        // Set the opacity of div to 0 (transparent)
-        div.style.opacity = "0";
+                    // Set the opacity of div to 0 (transparent)
+                    div.style.opacity = "0";
 
-        // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
-        setTimeout(function(){ div.style.display = "none"; }, 600);
-    }
-}
+                    // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+                    setTimeout(function(){ div.style.display = "none"; }, 600);
+                }
+            }
 	  </script>
    </body>
 </html>
