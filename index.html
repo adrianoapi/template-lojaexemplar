@@ -13,7 +13,7 @@
       <meta name="Classification" content="Manufacturing">
       <meta name="doc-class"      content="Living Document">
       <meta name="doc-type"       content="Web Page">
-      <meta name="author"         content="Loja Exemplar Engenharia de Projetos">
+      <meta name="author"         content="Loja Exemplar">
       <meta name="keywords"       content="Loja Exemplar, Ecommerce, e-commerce, loja virtual, Desenvolvimento, Fábrica de Software, Mobile, Sistemas, iOS, Android, Aplicativos, Programas">
       <meta name="description"    content="Loja Exemplar Engenharia de Projetos. Lojas e Aplicações sob medida em PHP, IOS e Android. Saiba como funciona o nosso processo ágil.">
       
@@ -192,19 +192,19 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                <div class="row">
                   <div class="6u 12u$(mobile)">
                         <div class="clear">
-                           <div class="alert" style="display:none;">
+                            <div id="danger" class="alert" style="display:none;">
                             <span class="closebtn">&times;</span>  
-                            <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+                            <strong>Antenção!</strong> Por favor, preencha o formulário corretamente!
                           </div>
-                          <div class="alert success" style="display:none;">
+                            <div id="success" class="alert success" style="display:none;">
                             <span class="closebtn">&times;</span>  
-                            <strong>Success!</strong> Indicates a successful or positive action.
+                            <strong>Sucesso!</strong> Indicates a successful or positive action.
                           </div>
-                          <div class="alert info" style="display:none;">
+                            <div id="info" class="alert info" style="display:none;">
                             <span class="closebtn">&times;</span>  
-                            <strong>Info!</strong> Indicates a neutral informative change or action.
+                            <strong>Enviando!</strong> Por favor aguarde...
                           </div>
-                          <div class="alert warning" style="display:none;">
+                            <div id="warning" class="alert warning" style="display:none;">
                             <span class="closebtn">&times;</span>  
                             <strong>Warning!</strong> Indicates a warning that might need attention.
                           </div>
@@ -286,27 +286,29 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
             });
             
             $( "#contato" ).submit(function( event ) {
-              alert( ".submit() called" );
+                
+                $("#danger" ).hide();
+                $("#success").hide();
+                $("#info"   ).hide();
+                $("#warning").hide();
+                
+                if(valida() == true){
+                  $("#info").show();
+                  console.log("OK");
+                }else{
+                  $("#danger").show();
+                }
+              
             });
             
             //Message
-            // Get all elements with class="closebtn"
             var close = document.getElementsByClassName("closebtn");
             var i;
 
             // Loop through all close buttons
             for (i = 0; i < close.length; i++) {
-                // When someone clicks on a close button
                 close[i].onclick = function(){
-
-                    // Get the parent of <span class="closebtn"> (<div class="alert">)
-                    var div = this.parentElement;
-
-                    // Set the opacity of div to 0 (transparent)
-                    div.style.opacity = "0";
-
-                    // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
-                    setTimeout(function(){ div.style.display = "none"; }, 600);
+                    $("#" + this.parentElement.id).hide();
                 }
             }
 	  </script>
