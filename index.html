@@ -209,7 +209,7 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                             <strong>Warning!</strong> Indicates a warning that might need attention.
                           </div>
                         </div>
-                        <form method="post" action="#">
+                      <form id="contato" method="post" action="#" onsubmit="return false;">
                            <div class="row">
                               <div class="12u$ 12u$(mobile)"><input type="text" name="name" placeholder="nome" /></div>
                               <div class="12u$ 12u$(mobile)"><input type="text" name="email" placeholder="e-mail" /></div>
@@ -246,8 +246,8 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
       <script src="assets/js/util.js"></script>
       <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
       <script src="assets/js/resp.js"></script>
-      <script src="assets/js/valida.js"></script>
       <script src="assets/js/main.js"></script>
+      <script src="assets/js/valida.js"></script>
 	  
 	  <script>
               
@@ -283,6 +283,10 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                     $('#top p' ).css('background-color', '#ff6600');
                     $('#top footer').css('margin-top', '250px');
                 }
+            });
+            
+            $( "#contato" ).submit(function( event ) {
+              alert( ".submit() called" );
             });
             
             //Message
