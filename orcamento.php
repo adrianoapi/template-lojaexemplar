@@ -29,12 +29,12 @@ if(isset($_POST)){
 
 		//Content
 		$mail->isHTML(true);
-		$mail->Subject = 'Orçamento #'.date('Ymd');
-		$mail->Body    = "<p>Nome    : <b>{$_POST['name']}</b></p>" .
-					     "<p>e-mail  : <b>{$_POST['email']}</b></p>" .
-						 "<p>telefone: <b>{$_POST['telefone']}</b></p>" .
-						 "<p>mensagem: <b>{$_POST['message']}</b></p>" .
-						 "";
+		$mail->Subject = utf8_decode('Orçamento #'.date('Ymd'));
+		$mail->Body    = "<p>Nome    : <b>". utf8_decode($_POST['name']) ."</b></p>" .
+				 "<p>e-mail  : <b>". utf8_decode($_POST['email']) ."</b></p>" .
+				 "<p>telefone: <b>". utf8_decode($_POST['telefone']) ."</b></p>" .
+				 "<p>mensagem: <b>". utf8_decode($_POST['message']) ."</b></p>" .
+		                 "";
 
 		$mail->send();
 		echo true;
