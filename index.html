@@ -198,7 +198,7 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                           </div>
                             <div id="success" class="alert success" style="display:none;">
                             <span class="closebtn">&times;</span>  
-                            <strong>Sucesso!</strong> Indicates a successful or positive action.
+                            <strong>Sucesso!</strong> Orçamento enviado. Obrigado!
                           </div>
                             <div id="info" class="alert info" style="display:none;">
                             <span class="closebtn">&times;</span>  
@@ -206,7 +206,7 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                           </div>
                             <div id="warning" class="alert warning" style="display:none;">
                             <span class="closebtn">&times;</span>  
-                            <strong>Warning!</strong> Indicates a warning that might need attention.
+                            <strong>Aviso!</strong> Erro ao enviar Orçamento.
                           </div>
                         </div>
                       <form name="contato" id="contato" method="post" action="#" onsubmit="return false;">
@@ -297,7 +297,8 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
 				  $("#info").show();
 				  
 				  var jqxhr = $.post( "orcamento.php", $("#contato").serialize(), function(data) {
-					  console.log(data);
+				  console.log(data);
+					  data > 0 ? $("#success").show() : $("#warning").show();
 					})
 					  .done(function() {
 						//alert( "second success" );
@@ -311,6 +312,7 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
 
 					jqxhr.always(function() {
 					  // Form clear
+					  $("#info").hide();
 					  $("#contato")[0].reset();
 					});
 				  
