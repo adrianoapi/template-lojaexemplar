@@ -209,7 +209,7 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                             <strong>Warning!</strong> Indicates a warning that might need attention.
                           </div>
                         </div>
-                      <form id="contato" method="post" action="#" onsubmit="return false;">
+                      <form name="contato" id="contato" method="post" action="#" onsubmit="return false;">
                            <div class="row">
                               <div class="12u$ 12u$(mobile)"><input type="text" name="name" placeholder="nome" /></div>
                               <div class="12u$ 12u$(mobile)"><input type="text" name="email" placeholder="e-mail" /></div>
@@ -293,8 +293,27 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
                 $("#warning").hide();
                 
                 if(valida() == true){
-                  $("#info").show();
-                  console.log("OK");
+                  
+				  $("#info").show();
+				  
+				  var jqxhr = $.post( "orcamento.php", $("#contato").serialize(), function(data) {
+					  console.log(data);
+					})
+					  .done(function() {
+						//alert( "second success" );
+					  })
+					  .fail(function() {
+						alert( "Erro: Falha ao enviar a mensagem!" );
+					  })
+					  .always(function() {
+						//alert( "finished" );
+					  });
+
+					jqxhr.always(function() {
+					  // Form clear
+					  $("#contato")[0].reset();
+					});
+				  
                 }else{
                   $("#danger").show();
                 }
