@@ -249,12 +249,12 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
       <script src="assets/js/main.js"></script>
       <script src="assets/js/valida.js"></script>
 	  
-	  <script>
+      <script>
               
-            var file_name = '563399566';	
-            var video     = checkIE() == true ? '<video autoplay loop src="assets/video/' + file_name + '.mp4" type="video/mp4"></video>' : '<video autoplay loop src="assets/video/' + file_name + '.ogv"></video>';
-            var str_video = '<div class="bg-video">' + video +'</div>';
-            var str_texto = '<div class="container">' +
+          var file_name = '563399566';	
+          var video     = checkIE() == true ? '<video autoplay loop src="assets/video/' + file_name + '.mp4" type="video/mp4"></video>' : '<video autoplay loop src="assets/video/' + file_name + '.ogv"></video>';
+          var str_video = '<div class="bg-video">' + video +'</div>';
+          var str_texto = '<div class="container">' +
                             '   <header>' +
                             '	  <h2>Terceirize seus serviços conosco!</h2>' +
                             '	  <p>Descrição e profissionalismo.<br />' +
@@ -287,34 +287,34 @@ Na prática podemos usar como exemplo a reutilização de descrições, que cria
             
             $( "#contato" ).submit(function( event ) {
                 
-                $("#danger" ).hide();
-                $("#success").hide();
-                $("#info"   ).hide();
-                $("#warning").hide();
+              $("#danger" ).hide();
+              $("#success").hide();
+              $("#info"   ).hide();
+              $("#warning").hide();
                 
-                if(valida() == true){
+              if(valida() == true){
                   
-				  $("#info").show();
-				  
-				  var jqxhr = $.post( "orcamento.php", $("#contato").serialize(), function(data) {
-				  console.log(data);
-					  data > 0 ? $("#success").show() : $("#warning").show();
-					})
-					  .done(function() {
-						//alert( "second success" );
-					  })
-					  .fail(function() {
-						alert( "Erro: Falha ao enviar a mensagem!" );
-					  })
-					  .always(function() {
-						//alert( "finished" );
-					  });
+		$("#info").show();
+		 
+		var jqxhr = $.post( "orcamento.php", $("#contato").serialize(), function(data) {
+		console.log(data);
+		data > 0 ? $("#success").show() : $("#warning").show();
+	       })
+		.done(function() {
+		    //alert( "second success" );
+		})
+		.fail(function() {
+		   alert( "Erro: Falha ao enviar a mensagem!" );
+		})
+		.always(function() {
+		//alert( "finished" );
+	        });
 
-					jqxhr.always(function() {
-					  // Form clear
-					  $("#info").hide();
-					  $("#contato")[0].reset();
-					});
+                jqxhr.always(function() {
+		  // Form clear
+		  $("#info").hide();
+		  $("#contato")[0].reset();
+		});
 				  
                 }else{
                   $("#danger").show();
